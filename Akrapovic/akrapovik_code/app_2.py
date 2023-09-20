@@ -14,6 +14,8 @@ def slugify(s):
   return s
 
 
+
+
 sheet_name = "Prices - 31 August 2023"
 wb = openpyxl.load_workbook("akrapovic_catalogue.xlsx") 
 print(wb.sheetnames) 
@@ -24,7 +26,7 @@ sheet_2 = wb.create_sheet(title=f"{sheet_name} - {date.today().strftime('%b-%d-%
 
 
 brand_name = None
-sheet_2.append(["manufacturer","Supplier","price","purchase","%","VAT","reference","product","EAN13","category","Meta title","Tags","Keywords","rewrite"])
+sheet_2.append(["manufacturer","Supplier","Price","Purchase","%","VAT","Reference","Product","EAN13","Category","Meta title","Tags","Keywords","Rewrite"])
 
 for row in range(2, sheet_1.max_row + 1): # To iterate over all the row and column of the sheet and get each value.
     temp_row = list()
