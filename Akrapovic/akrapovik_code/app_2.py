@@ -26,7 +26,7 @@ sheet_2 = wb.create_sheet(title=f"{sheet_name} - {date.today().strftime('%b-%d-%
 
 
 brand_name = None
-sheet_2.append(["manufacturer","Supplier","Price","Purchase","%","VAT","Reference","Product","EAN13","Category","Meta title","Tags","Keywords","Rewrite"])
+sheet_2.append(["Manufacturer","Supplier","Price","Purchase","%","VAT","Reference","Product","EAN13","Category","Meta title","Tags","Keywords","Rewrite"])
 
 for row in range(2, sheet_1.max_row + 1): # To iterate over all the row and column of the sheet and get each value.
     temp_row = list()
@@ -41,11 +41,11 @@ for row in range(2, sheet_1.max_row + 1): # To iterate over all the row and colu
         "7",                                        # "VAT"
         sheet_1[f"a{row}"].value,                   # "reference"
         sheet_1[f"i{row}"].value + " " + sheet_1[f"j{row}"].value  + " Akrapovic " + sheet_1[f"c{row}"].value, # "product"
-        sheet_1[f"b{row}"].value,                   # "EAN13"
-        "Home",                   # "category"
+        str(sheet_1[f"b{row}"].value),                   # "EAN13"
+        "Home",                                     # "category"
         sheet_1[f"i{row}"].value + " " + sheet_1[f"j{row}"].value  + " Akrapovic " + sheet_1[f"c{row}"].value,                   # "Meta title"
-        "Akrapovic," + sheet_1[f"a{row}"].value.replace(" ", ",")  + ","+ sheet_1[f"i{row}"].value.replace(" ", ",")  + "," + sheet_1[f"j{row}"].value.replace(" ", ","),                   # "Tags"
-        "Akrapovic," + sheet_1[f"a{row}"].value.replace(" ", ",")  + ","+ sheet_1[f"i{row}"].value.replace(" ", ",")  + "," + sheet_1[f"j{row}"].value.replace(" ", ","),                   # "Keywords"
+        "Akrapovic," + sheet_1[f"a{row}"].value.replace(" ", ",").replace("-", ",").replace("/", ",")  + ","+ sheet_1[f"i{row}"].value.replace(" ", ",").replace("-", ",").replace("/", ",")  + "," + sheet_1[f"j{row}"].value.replace(" ", ",").replace("-", ",").replace("/", ","),                   # "Tags"
+        "Akrapovic," + sheet_1[f"a{row}"].value.replace(" ", ",").replace("-", ",").replace("/", ",")  + ","+ sheet_1[f"i{row}"].value.replace(" ", ",").replace("-", ",").replace("/", ",")  + "," + sheet_1[f"j{row}"].value.replace(" ", ",").replace("-", ",").replace("/", ","),                   # "Keywords"
         slugify("Akrapovic-" + sheet_1[f"a{row}"].value),                   # "rewrite"
        
     ]
