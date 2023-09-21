@@ -38,7 +38,7 @@ for row in range(2, sheet_1.max_row + 1): # To iterate over all the row and colu
           "Racingline",                                # "manufacturer"
           "Racingline",                                # "Supplier"
           sheet_1[f"f{row}"].value,                   # "price"
-          Decimal(sheet_1[f"f{row}"].value) * (1-(Decimal(sheet_1[f"d{row}"].value))),          # "purchase"
+          sheet_1[f"c{row}"].value,          # "purchase"
           (Decimal(sheet_1[f"d{row}"].value)-Decimal(0.1)) * 100,             # " % "
           "7",                                        # "VAT"
           sheet_1[f"a{row}"].value,                   # "reference"
