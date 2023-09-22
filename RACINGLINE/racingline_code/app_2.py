@@ -45,8 +45,8 @@ for row in range(2, sheet_1.max_row + 1): # To iterate over all the row and colu
           sheet_1[f"b{row}"].value + " Racingline " , # "Name"
           "Home",                   # "category"
           "Racingline " + sheet_1[f"b{row}"].value,                   # "Meta title"
-          "Racingline," + sheet_1[f"b{row}"].value.replace(" ", ",").replace("-", ",").replace("/", ","),  # "Tags"
-          "Racingline," + sheet_1[f"b{row}"].value.replace(" ", ",").replace("-", ",").replace("/", ","),  # "Keywords"
+          "Racingline," + sheet_1[f"b{row}"].value,  # "Tags"
+          "Racingline," + sheet_1[f"b{row}"].value,  # "Keywords"
           slugify("Racingline-" + sheet_1[f"a{row}"].value),          # "rewrite"
       ]
       sheet_2.append(temp_row)

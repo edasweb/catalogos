@@ -30,7 +30,7 @@ sheet_2 = wb.create_sheet(title=f"{sheet_name} - {date.today().strftime('%b-%d-%
 
 
 brand_name = None
-sheet_2.append(["Manufacturer","Supplier","Price","Purchase","%","VAT","Reference","Product","Category","Meta title","Tags","Keywords","Rewrite"])
+sheet_2.append(["Manufacturer","Supplier","Price","Purchase","%","VAT","Reference","Name","Category","Meta title","Tags","Keywords","Rewrite"])
 
 for row in range(2, sheet_1.max_row + 1): # To iterate over all the row and column of the sheet and get each value.
     temp_row = list()
@@ -46,8 +46,8 @@ for row in range(2, sheet_1.max_row + 1): # To iterate over all the row and colu
         sheet_1[f"b{row}"].value + " " + sheet_1[f"c{row}"].value  + getString(sheet_1[f"j{row}"].value) + getString(sheet_1[f"d{row}"].value)+ " "+ getString(sheet_1[f"l{row}"].value) + " "+ (" PD(" if sheet_1[f"k{row}"].value != None else "") + getString(sheet_1[f"k{row}"].value)+ (")" if sheet_1[f"k{row}"].value != None else "")   + " "+ (" TD(" if sheet_1[f"m{row}"].value != None else "") + getString(sheet_1[f"m{row}"].value) + (")" if sheet_1[f"m{row}"].value != None else ""),  # "product"
         "Home",                   # "category"
         sheet_1[f"b{row}"].value + " " + sheet_1[f"c{row}"].value + getString(sheet_1[f"j{row}"].value)  + getString(sheet_1[f"d{row}"].value)+ ""+ getString(sheet_1[f"l{row}"].value) + "" + getString(sheet_1[f"k{row}"].value)  + "" + getString(sheet_1[f"m{row}"].value) ,                   # "Meta title"
-        "Scorpion," + sheet_1[f"b{row}"].value + "," + sheet_1[f"c{row}"].value + "," + getString(sheet_1[f"j{row}"].value) + "," + getString(sheet_1[f"d{row}"].value)+ ","+ getString(sheet_1[f"l{row}"].value) + ","+ getString(sheet_1[f"k{row}"].value)+  "," + getString(sheet_1[f"m{row}"].value),                   # "Tags"
-        "Scorpion," + sheet_1[f"b{row}"].value.replace(" ", ",") + "," + sheet_1[f"c{row}"].value.replace(" ", ",") + "," + getString(sheet_1[f"j{row}"].value).replace(" ", ",") + "," + sheet_1[f"d{row}"].value.replace(" ", ",")+ ","+ getString(sheet_1[f"l{row}"].value).replace(" ", ",") + ","+ getString(sheet_1[f"k{row}"].value).replace(" ", ",")+  "," + getString(sheet_1[f"m{row}"].value).replace(" ", ",")  ,             # "Keywords"
+        "Scorpion," + sheet_1[f"e{row}"].value + "," +sheet_1[f"b{row}"].value + "," + sheet_1[f"c{row}"].value + "," + getString(sheet_1[f"j{row}"].value) + "," + getString(sheet_1[f"d{row}"].value)+ ","+ getString(sheet_1[f"l{row}"].value) + ","+ getString(sheet_1[f"k{row}"].value)+  "," + getString(sheet_1[f"m{row}"].value),                   # "Tags"
+        "Scorpion," + sheet_1[f"e{row}"].value + "," +sheet_1[f"b{row}"].value.replace(" ", ",") + "," + sheet_1[f"c{row}"].value.replace(" ", ",") + "," + getString(sheet_1[f"j{row}"].value).replace(" ", ",") + "," + sheet_1[f"d{row}"].value.replace(" ", ",")+ ","+ getString(sheet_1[f"l{row}"].value).replace(" ", ",") + ","+ getString(sheet_1[f"k{row}"].value).replace(" ", ",")+  "," + getString(sheet_1[f"m{row}"].value).replace(" ", ",")  ,             # "Keywords"
         slugify("Scorpion-" + sheet_1[f"e{row}"].value),                   # "rewrite"
        
     ]

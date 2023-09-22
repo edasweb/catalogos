@@ -26,7 +26,7 @@ sheet_2 = wb.create_sheet(title=f"{sheet_name} - {date.today().strftime('%b-%d-%
 
 
 brand_name = None
-sheet_2.append(["Manufacturer","Supplier","Price Pound","Purchase Pound","Price Euro","Purchase Euro","Price Dolar","Purchase Dolar","%","VAT","Reference","Product","EAN13","Category","Meta title","Tags","Keywords","Rewrite","Size"])
+sheet_2.append(["Manufacturer","Supplier","Price Pound","Purchase Pound","Price Euro","Purchase Euro","Price Dolar","Purchase Dolar","%","VAT","Reference","Name","EAN13","Category","Meta title","Tags","Keywords","Rewrite","Size"])
 group = None
 for row in range(2, sheet_1.max_row + 1): # To iterate over all the row and column of the sheet and get each value.
     temp_row = list()
@@ -48,8 +48,8 @@ for row in range(2, sheet_1.max_row + 1): # To iterate over all the row and colu
         "",                                         # "EAN13"
         "Home",                                     # "category"
         sheet_1[f"c{row}"].value,                    # "Meta title"
-        "Eventuri," + "" if not sheet_1[f"b{row}"].value else sheet_1[f"b{row}"].value.replace(" ", ",") + ","+ "" if not sheet_1[f"c{row}"].value else sheet_1[f"c{row}"].value.replace(" ", ","),      # "Tags"
-        "Eventuri," + "" if not sheet_1[f"b{row}"].value else sheet_1[f"b{row}"].value.replace(" ", ",") + ","+ "" if not sheet_1[f"c{row}"].value else sheet_1[f"c{row}"].value.replace(" ", ","), # "Keywords"
+        "Eventuri," + "" if not sheet_1[f"b{row}"].value else sheet_1[f"b{row}"].value + ","+ "" if not sheet_1[f"c{row}"].value else sheet_1[f"c{row}"].value,      # "Tags"
+        "Eventuri," + "" if not sheet_1[f"b{row}"].value else sheet_1[f"b{row}"].value + ","+ "" if not sheet_1[f"c{row}"].value else sheet_1[f"c{row}"].value, # "Keywords"
         slugify("Eventuri-" + group),                   # "rewrite"
         sheet_1[f"h{row}"].value,                   # "rewrite"
        
