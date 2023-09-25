@@ -36,7 +36,7 @@ for row in range(2, sheet_1.max_row + 1): # To iterate over all the row and colu
         "Akrapovic",                                # "manufacturer"
         "Akrapovic",                                # "Supplier"
         sheet_1[f"m{row}"].value,                   # "price"
-        Decimal(sheet_1[f"m{row}"].value)/Decimal(1.25), # "purchase"
+        Decimal(sheet_1[f"m{row}"].value)* Decimal(0.75), # "purchase"
         "15",                                       # " % "
         "7",                                        # "VAT"
         sheet_1[f"a{row}"].value,                   # "reference"
@@ -47,7 +47,6 @@ for row in range(2, sheet_1.max_row + 1): # To iterate over all the row and colu
         "Akrapovic," + sheet_1[f"a{row}"].value  + ","+ sheet_1[f"i{row}"].value.replace(" ", ",").replace("-", ",").replace("/", ",")  + "," + sheet_1[f"j{row}"].value.replace(" ", ",").replace("-", ",").replace("/", ","),                   # "Tags"
         "Akrapovic," + sheet_1[f"a{row}"].value  + ","+ sheet_1[f"i{row}"].value.replace(" ", ",").replace("-", ",").replace("/", ",")  + "," + sheet_1[f"j{row}"].value.replace(" ", ",").replace("-", ",").replace("/", ","),                   # "Keywords"
         slugify("Akrapovic-" + sheet_1[f"a{row}"].value),                   # "rewrite"
-       
     ]
     sheet_2.append(temp_row)
     

@@ -26,7 +26,7 @@ sheet_2 = wb.create_sheet(title=f"{sheet_name} - {date.today().strftime('%b-%d-%
 brand_name = None
 
 
-sheet_2.append(["AutoPolar","price","reference","width","height","depth","weight","name"])
+sheet_2.append(["Supplier","price","reference","width","height","depth","weight","name","homologation", "description"])
 
 for row in range(2, sheet_1.max_row + 1): # To iterate over all the row and column of the sheet and get each value.
     temp_row = list()
@@ -35,15 +35,19 @@ for row in range(2, sheet_1.max_row + 1): # To iterate over all the row and colu
         "Akrapovic",                                # "manufacturer"
         sheet_1[f"m{row}"].value,                   # "price"
         sheet_1[f"a{row}"].value,                   # "reference"
+        
         "",                                         # "width"
         "",                                         # "height"
         "",                                         # "depth"
         "",                                         # "weight"
-        sheet_1[f"i{row}"].value + " " + sheet_1[f"j{row}"].value  + " Akrapovic " + sheet_1[f"c{row}"].value     # "rewrite"
+        sheet_1[f"i{row}"].value + " " + sheet_1[f"j{row}"].value  + " Akrapovic " + sheet_1[f"c{row}"].value,     # "name"
+        sheet_1[f"e{row}"].value,    # "homologation"
+        sheet_1[f"f{row}"].value,    # "description"
+        
     ]
     sheet_2.append(temp_row)
     
-wb.save("templace_csv_clientes_new.csv")
+wb.save("templace_csv_clientes_new.xlsx")
 
 
 
