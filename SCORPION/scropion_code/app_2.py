@@ -37,15 +37,15 @@ for row in range(2, sheet_1.max_row + 1): # To iterate over all the row and colu
     
     temp_row = [
         "Scorpion",                                # "manufacturer"
-        sheet_1[f"b{row}"].value,                                # "Supplier"
+        sheet_1[f"a{row}"].value,                                # "Supplier"
         sheet_1[f"h{row}"].value,                   # "price"
         Decimal(sheet_1[f"h{row}"].value) * Decimal(0.50), # "purchase"
-        "25",                                       # " % "
+        "35",                                       # " % "
         "7",                                        # "VAT"
         sheet_1[f"e{row}"].value,                   # "reference"
-        sheet_1[f"b{row}"].value + " " + sheet_1[f"c{row}"].value  + getString(sheet_1[f"j{row}"].value) + getString(sheet_1[f"d{row}"].value)+ " "+ getString(sheet_1[f"l{row}"].value) + " "+ (" PD(" if sheet_1[f"k{row}"].value != None else "") + getString(sheet_1[f"k{row}"].value)+ (")" if sheet_1[f"k{row}"].value != None else "")   + " "+ (" TD(" if sheet_1[f"m{row}"].value != None else "") + getString(sheet_1[f"m{row}"].value) + (")" if sheet_1[f"m{row}"].value != None else ""),  # "product"
+        sheet_1[f"a{row}"].value + " " + sheet_1[f"c{row}"].value + " " + sheet_1[f"d{row}"].value,  # "name"
         "Home",                   # "category"
-        sheet_1[f"b{row}"].value + " " + sheet_1[f"c{row}"].value + getString(sheet_1[f"j{row}"].value)  + getString(sheet_1[f"d{row}"].value)+ ""+ getString(sheet_1[f"l{row}"].value) + "" + getString(sheet_1[f"k{row}"].value)  + "" + getString(sheet_1[f"m{row}"].value) ,                   # "Meta title"
+        sheet_1[f"a{row}"].value + " " + sheet_1[f"c{row}"].value+ " " + sheet_1[f"d{row}"].value,    # "Meta title"
         "Scorpion," + sheet_1[f"e{row}"].value + "," +sheet_1[f"b{row}"].value + "," + sheet_1[f"c{row}"].value + "," + getString(sheet_1[f"j{row}"].value) + "," + getString(sheet_1[f"d{row}"].value)+ ","+ getString(sheet_1[f"l{row}"].value) + ","+ getString(sheet_1[f"k{row}"].value)+  "," + getString(sheet_1[f"m{row}"].value),                   # "Tags"
         "Scorpion," + sheet_1[f"e{row}"].value + "," +sheet_1[f"b{row}"].value.replace(" ", ",") + "," + sheet_1[f"c{row}"].value.replace(" ", ",") + "," + getString(sheet_1[f"j{row}"].value).replace(" ", ",") + "," + sheet_1[f"d{row}"].value.replace(" ", ",")+ ","+ getString(sheet_1[f"l{row}"].value).replace(" ", ",") + ","+ getString(sheet_1[f"k{row}"].value).replace(" ", ",")+  "," + getString(sheet_1[f"m{row}"].value).replace(" ", ",")  ,             # "Keywords"
         slugify("Scorpion-" + sheet_1[f"e{row}"].value),                   # "rewrite"
@@ -53,7 +53,7 @@ for row in range(2, sheet_1.max_row + 1): # To iterate over all the row and colu
     ]
     sheet_2.append(temp_row)
     
-wb.save("scorpion_all_stars_import_catalogue_new.xlsx")
+wb.save("scorpion_all_stars_import_catalogue_new29.xlsx")
 
 
 

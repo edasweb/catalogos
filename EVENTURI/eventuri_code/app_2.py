@@ -34,7 +34,7 @@ for row in range(2, 157): # To iterate over all the row and column of the sheet 
         "Eventuri",                                # "Supplier"
         sheet_1[f"f{row}"].value if not str(sheet_1[f"f{row}"].value).startswith("=") else str(str(sheet_1[f"g{row}"].value/1.05)),                   # "price"
         Decimal(sheet_1[f"f{row}"].value if not str(sheet_1[f"f{row}"].value).startswith("=") else Decimal(str(sheet_1[f"g{row}"].value/1.05))) * Decimal(0.60), # "purchase"
-        "15",                                       # " % "
+        "25",                                       # " % "
         "7",                                        # "VAT"
         sheet_1[f"b{row}"].value,                   # "reference"
         sheet_1[f"c{row}"].value,                   # "product"
