@@ -1,0 +1,16 @@
+A - Reference
+B - Price
+C - Discount From Supplier
+D - Discount To Client
+E - Name
+F - EAN13
+G - Category || "Home"
+H - Weigth
+I - Size --- > W x H x D
+J - Width
+K - Height
+L - Depth
+M - Short Description (For Pictures)
+
+
+

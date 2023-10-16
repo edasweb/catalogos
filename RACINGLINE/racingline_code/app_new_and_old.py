@@ -16,41 +16,59 @@ def slugify(s):
 
 
 
-sheet_name = "June 2023"
-wb = openpyxl.load_workbook("racingline_base.xlsx") 
-print(wb.sheetnames) 
-
-work_sheet = wb[sheet_name] # To accsses the a sheet in the workbook. And create a sheet object.
-sheet_online = wb["online"] # To accsses the a sheet in the workbook. And create a sheet object.
-
-onlines = []
-for row in range(1, sheet_online.max_row + 1): 
-      onlines.append(sheet_online[f"a{row}"].value.replace(" ", ""))
-      
-
-sheet_new = wb.create_sheet(title=f"New {sheet_name} - {date.today().strftime('%b-%d-%Y')}", index=0) # Use the ".create_sheet()" method to create a new sheet in the workbook. The index parameter is the position of the sheet
-sheet_expired = wb.create_sheet(title=f"Discontinued{sheet_name} - {date.today().strftime('%b-%d-%Y')}", index=0) # Use the ".create_sheet()" method to create a new sheet in the workbook. The index parameter is the position of the sheet
 
 
-all_references = []
-for row in range(2, work_sheet.max_row + 1): # To iterate over all the row and column of the sheet and get each value.
-    if(row<=410):
-      all_references.append(work_sheet[f"a{row}"].value.replace(" ", ""))
-      if not work_sheet[f"a{row}"].value.replace(" ", "") in onlines:
-          sheet_new.append([work_sheet[f"a{row}"].value.replace(" ", "")])
-count = 0      
-for online_reference in onlines: 
-      count = count + 1
-      if not online_reference in all_references:
-          sheet_expired.append([online_reference])
-      else:
-          print(online_reference, " in line ",  count)
-        
+
+
+def read_excel_file():
+
+
+    wb = openpyxl.load_workbook("WorkFile.xlsx") 
+
+    out_date_sheet = wb.create_sheet(title=f"out_date - {date.today().strftime('%b-%d-%Y')}", index=0) # Use the ".create_sheet()" method to create a new sheet in the workbook. The index parameter is the position of the sheet
+
+    sheet_name = "website"
+    website_sheet = wb[sheet_name] # To accsses the a sheet in the workbook. And create a sheet object.
+    website_references = list()
+
+    for row in range(1, website_sheet.max_row + 1): # To iterate over all the row and column of the sheet and get each value.
+        if website_sheet[f"c{row}"].value != None: 
+            website_references.append(website_sheet[f"c{row}"].value.strip())
+
+
     
-wb.save("expired_and_new.xlsx")
+    new_sheet = wb.create_sheet(title=f"new - {date.today().strftime('%b-%d-%Y')}", index=0) # Use the ".create_sheet()" method to create a new sheet in the workbook. The index parameter is the position of the sheet
+    
+    sheet_name = "prices"
+    price_sheet = wb[sheet_name] # To accsses the a sheet in the workbook. And create a sheet object.
+    price_references = list()
+    for row in range(1, price_sheet.max_row + 1): # To iterate over all the row and column of the sheet and get each value.
+        price_references.append(price_sheet[f"g{row}"].value.strip())
 
 
 
+    for reference in website_references:
+        reference = reference.strip()
+        if not reference in price_references:
+            out_date_sheet.append([reference])
 
+
+    for row in range(1, price_sheet.max_row + 1): # To iterate over all the row and column of the sheet and get each value.
+        reference = price_sheet[f"g{row}"].value.strip()
+        if not reference in website_references:
+            temp_row = list()
+            for col in range(1, price_sheet.max_column + 1):
+                # print(row, col)
+                cell_value = price_sheet.cell(row, col).value
+                temp_row.append(cell_value)
+                
+            new_sheet.append(temp_row)
+    
+    wb.save("RACINLINE_UPDATE_SHEET.xlsx")
+    
+    
+
+
+read_excel_file()
 
 
