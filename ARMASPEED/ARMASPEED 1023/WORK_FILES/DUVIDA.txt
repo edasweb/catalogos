@@ -1,0 +1,15 @@
+	KEVLAR  AIR INTAKE								
+	No.	Part#	Description	MSRP	"Tier 1
+
+	1	TBA	Audi RS3 8V kevlar fiber airbox	US$1 716 	US$1 201 	US$1 115 	US$1 030 	US$944 
+	2	TBA	Audi RS5 kevlar fiber airbox	US$1 925 	US$1 348 	US$1 251 	US$1 155 	US$1 059 
+	3	TBA	Audi RS6 C7 kevlar fiber airbox	US$1 925 	US$1 348 	US$1 251 	US$1 155 	US$1 059 
+	4	TBA	BMW E92 M3 (S65B40) kevlar fiber airbox	US$1 540 	US$1 078 	US$1 001 	US$924 	US$847 
+	5	TBA	BMW F87 M2 kevlar fiber airbox	US$1 788 	US$1 252 	US$1 162 	US$1 073 	US$983 
+	6	TBA	BMW F80 / F82 M3 M4 kevlar fiber airbox	US$2 750 	US$1 925 	US$1 788 	US$1 650 	US$1 513 
+	7	TBA	BMW F06/10/12/13 M5 M6 kevlar fiber airbox	US$2 321 	US$1 625 	US$1 509 	US$1 393 	US$1 277 
+	8	TBA	Ferrari 458 kevlar fiber airbox	US$6 188	US$4 332 	US$4 022 	US$3 713 	US$3 403 
+	9	TBA	Porsche 997 GT3 kevlar fiber airbox	US$2 750 	US$1 925 	US$1 788 	US$1 650 	US$1 513 
+	10	TBA	Porsche 991 GT3/RS kevlar fiber airbox	US$2 750 	US$1 925 	US$1 788 	US$1 650 	US$1 513 
+	11	TBA	AMG GT	US$4 400 	US$3 080 	US$2 860 	US$2 640 	US$2 420 
+	12	TBA	BENZ W177 A45 Carbon Cold Air Intake	US$880 	US$616 	US$572 	US$528 	US$484 
